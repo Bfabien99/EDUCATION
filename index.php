@@ -7,6 +7,10 @@
     {   
         require 'views/login.php'; 
     });
+    $router->map('GET',"/EDUCATION/forgot",function()
+    {   
+        require 'views/forgot.php'; 
+    });
 
 
     $match = $router->match();
