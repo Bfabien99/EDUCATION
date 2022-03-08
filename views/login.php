@@ -132,6 +132,24 @@
                 width: 45%;
             }
         }
+
+        @media (max-width:420px){
+            .header{
+                width: 80%;
+            }
+            form{
+                width: 90%;
+            }
+            label,.bottom{
+                width: 100%;
+            }
+            .bottom{
+                flex-direction: column;
+            }
+            .bottom .button{
+                width: 70%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -145,7 +163,7 @@
                 <label for=""><input type="password" name="" id="" placeholder="Password"><img src="assets/images/icons8-mot-de-passe-100.png" alt="" class="icon"></label>
                 <div class="bottom">
                     <button type="submit" class="button"><span>Sign In</span></button>
-                    <a href="" class="button">Sign Up</a>
+                    <a href="signup" class="button">Sign Up</a>
                 </div>
            </form>
            <a href="forgot" class="forgot">Forgot password</a>

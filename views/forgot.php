@@ -34,7 +34,7 @@
             position: absolute;
             top: 20px;
             left: 10px;
-            width: 20%;
+            width: 10%;
             height: 30px;
             display: flex;
             align-items: center;
@@ -62,7 +62,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 70%;
             align-items: center;
             gap: 1.5rem;
             font-size: 1.3rem;
@@ -118,11 +117,32 @@
             transition: all 0.2s;
         }
 
-        @media (max-width:900px){
+        @media (max-width:970px){
+            #back{
+                width: 20%;
+            }
+            form{
+                width: 70%;
+            }
             label{
                 width: 80%;
             }
+            #submit{
+                width: 45%;
+            }
+        }
 
+        @media (max-width:970px){
+            #back{
+                width: 40%;
+            }
+            form{
+                padding: 0.5em;
+                width: 90%;
+            }
+            label{
+                width: 100%;
+            }
             #submit{
                 width: 45%;
             }
@@ -131,7 +151,7 @@
 </head>
 <body>
     <div class="container">
-        <a id="back" href="/EDUCATION"><img src="assets/images/icons8-arrow-left-128.png" alt="" class="icon"><span>Back</span></a>
+        <a id="back" href="/EDUCATION"><img src="assets/images/icons8-double-gauche-64.png" alt="" class="icon"><span>Back</span></a>
         <form action="" method="post">
             <h1>Password Recovery</h1>
             <label for=""><input type="text" name="" id="" placeholder="Username"><img src="assets/images/icons8-utilisateur-100.png" alt="" class="icon"></label>

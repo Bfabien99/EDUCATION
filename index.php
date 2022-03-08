@@ -11,6 +11,10 @@
     {   
         require 'views/forgot.php'; 
     });
+    $router->map('GET',"/EDUCATION/signup",function()
+    {   
+        require 'views/signup.php'; 
+    });
 
 
     $match = $router->match();
