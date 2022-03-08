@@ -7,4 +7,174 @@ html{
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
+    user-select: none;
+}
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 80px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    font-family: Poppins;
+    background-color: white;
+}
+header h3{
+    color: rgb(0, 0, 0);
+    margin-left:1rem ;
+    font-size: 3rem;
+}
+header h3::before{
+    content: ".";
+    font-size: 3rem;
+}
+
+header form{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+header input[type="search"]{
+    width: 50%;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+header input[type="submit"]{
+    background: url(../images/search_icon.png) no-repeat center;
+    background-size: contain;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+    height: 40px;
+    border-radius: 8px;
+    width: 15%;
+}
+
+header .navigation{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .navigation form{
+    display: none;
+}
+
+header .navigation a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+}
+
+header .navigation li:hover{
+    list-style-type: disc;
+    transition: all 0.2s;
+    color: rgb(0, 0, 0);
+}
+
+header.sticky
+{
+    background-color: rgb(255, 255, 255);
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+header.sticky .navigation li a
+{
+    color: rgb(5, 5, 5);
+}
+
+.container{
+    margin-top: 130px;
+}
+
+@media (max-width:1025px)
+{
+    header,
+    header.sticky
+    {
+        padding: 10px 20px;
+    }
+
+    header .navigation
+    {
+        display: none;
+    }
+
+    header form{
+        display: none;
+    }
+
+    header .navigation form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5em;
+        align-items: center;
+
+    }
+
+    header .navigation input[type="search"]{
+        width: 50%;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    .menuToggle
+    {
+        position: relative;
+        width:40px;
+        height:40px;
+        background: url(../images/menu_rounded_100px.png) no-repeat center;
+        background-size: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        filter:invert(1);
+    }
+
+    .menuToggle.active
+    {
+        width:40px;
+        height:40px;
+        background: url(../images/multiply_100px.png) no-repeat center;
+        background-size: 30px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    header .navigation.active
+    {
+        width: 100%;
+        height: calc(100% - 68px);
+        position: fixed;
+        top: 68px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        background-color: rgba(255, 255, 255, 0.973);
+        z-index: 5px;
+    }
+
+    header .navigation.active li a
+    {
+        color: #111;
+        font-size: 1.6em;
+    }
+
 }

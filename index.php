@@ -5,7 +5,7 @@
 
     $router->map('GET',"/EDUCATION/",function()
     {   
-        require 'views/home.php'; 
+        require 'views/login.php'; 
     });
 
 
