@@ -4,129 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/signup.css">
     <title>Sign Up</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,400&family=Roboto+Serif:ital,wght@0,100;0,300;0,400;0,500;1,100;1,200&family=Titillium+Web:ital,wght@0,200;0,400;1,200;1,300&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Titillium Web',Roboto,Poppins,cursive;
-        }
-        .container{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: url('assets/images/jaredd-craig-HH4WBGNyltc-unsplash.jpg') no-repeat center/cover;
-            background-blend-mode: lighten;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            color: white;
-        }
-        .top{
-            background-color: rgba( 255, 255, 255, 0.68 );
-            width: 40%;
-        }
-        .top h1{
-            background-color: #AAA;
-            text-align: center;
-        }
-        .box{
-            color: rgba( 0, 0, 0, 1);
-            padding: 00.5rem;
-        }
-        form{
-            border: 1px solid rgba( 255, 255, 255, 0.68 );
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            justify-content: center;
-            align-items: center;
-            padding: 1em 0;
-            text-shadow: 0px 0px 5px black;
-        }
-
-        form .group{
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-            width: 80%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        form .group input,form .group select{
-            border: none;
-            width: 60%;
-            height: 40px;
-            text-align: center;
-            border-bottom: 2px solid white;
-            font-size: 1.3rem;
-            outline: none;
-            background-color: transparent;
-            color: white;
-        }
-
-        form .group input::placeholder{
-            color: #eee;
-            text-shadow: 0px 0px 5px black;
-        }
-
-        form .group input:focus{
-            border-bottom: 2px solid tomato;
-        }
-
-        #submit{
-            width: 40%;
-            height: 30px;
-            border: 2px solid white;
-            padding: 5px;
-            background: transparent;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            padding: 1.5rem;
-        }
-        #submit:hover{
-            border: 2px solid tomato;
-            color: tomato;
-            transition: all 0.2s;
-        }
-
-        @media (max-width:1250px){
-            .container{
-                flex-direction: column;
-            }
-            form{
-                padding: 0.5em;
-                width: 70%;
-            }
-            form.group{
-                width: 90%;
-            }
-            form .group input,form .group select{
-            width: 80%;
-            }
-            .top{
-                width: 70%;
-            }
-            #submit{
-                width: 45%;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
+    <a id="back" href="/EDUCATION"><img src="assets/images/icons8-double-gauche-64.png" alt="" class="icon"><span>Back</span></a>
         <div class="top">
             <h1>Welcome to .Learn</h1>
             <div class="box">
@@ -142,18 +25,17 @@
             </div>
             <div class="group">
                 <h5>At least 5 characters</h5>
-                <label for="username"><input type="text" name="username" placeholder="Your username (Eg: MisterMe)"></label>
+                <label for="username"><input type="text" name="username" id="username" placeholder="Your username (Eg: MisterMe)"></label>
             </div>
             <div class="group">
-                <h5>A valid email please</h5>
                 <label for="email"><input type="email" name="email" placeholder="Your email (Eg: Me@me.me)"></label>
             </div>
             <div class="group">
                 <label for="gender">
                 <select name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">none</option>
+                    <option value="male" style="color:tomato">Male</option>
+                    <option value="female" style="color:tomato">Female</option>
+                    <option value="other" style="color:tomato">none</option>
                 </select>
             </label>
             </div>
@@ -162,7 +44,7 @@
             </div>
             <div class="group">
             <h5>At least 6 characters</h5>
-                <label for="password1"><input type="password" name="password" placeholder="Your password"></label>
+                <label for="password1"><input type="password" id="password" name="password" placeholder="Your password"></label>
             </div>
             <div class="group">
                 <label for="password2"><input type="password" name="cpassword" placeholder="Comfirm password"></label>
@@ -171,4 +53,21 @@
         </form>
     </div>
 </body>
+<script>
+    function check(variable,number){
+        variable.addEventListener('keydown',function(){
+            if (variable.value.length<number-1) {
+                variable.style.color="red";
+            }
+            else {
+                variable.style.color="white";
+            }
+        })
+    }
+
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    check(username,5);
+    check(password,6);
+</script>
 </html>
