@@ -29,4 +29,57 @@
             ]);
         }
 
+        public function get($name,$password){
+            $db = $this->dbconnect();
+            $query = $db->prepare("SELECT * FROM users WHERE password = :password  AND (email = :email OR username = :username)");
+            $query->execute([
+                'email'=>$name,
+                'username'=>$name,
+                'password'=>$password
+            ]);
+            $result = $query->fetch();
+            if (!$result) 
+            {
+                return false;
+            }
+            else 
+            {
+                return $result;
+            }
+        }
+
+        public function recovery($username,$email,$birth){
+            $db = $this->dbconnect();
+            $query = $db->prepare("SELECT * FROM users WHERE username = :username  AND email = :email AND birth = :birth");
+            $query->execute([
+                'username'=>$username,
+                'email'=>$email,
+                'birth'=>$birth
+            ]);
+            $result = $query->fetch();
+            if (!$result) 
+            {
+                return false;
+            }
+            else 
+            {
+                return $result;
+            }
+        }
+
+        public function isexist($username,$email){
+            $db = $this->dbconnect();
+            $query = $db->prepare("SELECT * FROM users WHERE username LIKE '%$username%' OR email LIKE '%$email%'");
+            $query->execute();
+            $result = $query->fetch();
+            if (!$result) 
+            {
+                return false;
+            }
+            else 
+            {
+                return $result;
+            }
+        }
+
     }

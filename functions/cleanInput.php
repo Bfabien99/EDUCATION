@@ -32,7 +32,6 @@
                     $err = "<span class='red'>password are different</span>";
                 }
                 else{
-                    $err = "<span class='green'>account created succesfuly. You can login now</span>";
                     $succes = true;
                 }
             }

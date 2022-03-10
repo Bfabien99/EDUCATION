@@ -50,6 +50,7 @@
                 <label for="password2"><input type="password" name="cpassword" placeholder="Comfirm password" required></label>
             </div>
             <?php if(!empty($err)) echo $err;?>
+            <?php if(!empty($msg)) echo $msg;?>
             <button type="submit" id="submit" required>Sign Up</button>
         </form>
     </div>

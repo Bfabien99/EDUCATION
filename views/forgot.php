@@ -12,9 +12,11 @@
         <a id="back" href="/EDUCATION"><img src="assets/images/icons8-double-gauche-64.png" alt="" class="icon"><span>Back</span></a>
         <form action="" method="post">
             <h1>Password Recovery</h1>
-            <label for=""><input type="text" name="" id="" placeholder="Username"><img src="assets/images/icons8-utilisateur-100.png" alt="" class="icon"></label>
-            <label for=""><input type="text" name="" id="" placeholder="Email"><img src="assets/images/icons8-email-100.png" alt="" class="icon"></label>
-            <label for=""><input type="date" name="" id="" title="birthday"><img src="assets/images/icons8-anniversaire-100.png" alt="" class="icon"></label>
+            <label for=""><input type="text" name="username" placeholder="Username"><img src="assets/images/icons8-utilisateur-100.png" alt="" class="icon"></label>
+            <label for=""><input type="email" name="email" placeholder="Email"><img src="assets/images/icons8-email-100.png" alt="" class="icon"></label>
+            <label for=""><input type="date" name="birth" title="birthday"><img src="assets/images/icons8-anniversaire-100.png" alt="" class="icon"></label>
+            <?php if(!empty($err)) echo $err;?>
+            <?php if(!empty($msg)) echo $msg;?>
             <button type="submit" id="submit">Check</button>
         </form>
     </div>

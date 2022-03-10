@@ -87,6 +87,10 @@
             color: lightgrey;
             text-shadow: 1px 0px 10px black;
         }
+        form .red{
+            color: red;
+            text-shadow: 0px 0px 2px black;
+        }
         #submit{
             width: 40%;
             height: 30px;

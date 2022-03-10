@@ -14,8 +14,10 @@
                 <p>Education is like an art; it is a perpetual creation that progresses by provoking ever new encounters. [...] The educational system can therefore be defined as the place where one teaches and where one practices the art of encounter</p>
             </div>
            <form action="" method="post">
-                <label for=""><input type="text" name="" id="" placeholder="Username or email"><img src="assets/images/icons8-utilisateur-100.png" alt="" class="icon"></label>
-                <label for=""><input type="password" name="" id="" placeholder="Password"><img src="assets/images/icons8-mot-de-passe-100.png" alt="" class="icon"></label>
+                <label for=""><input type="text" name="name" id="" placeholder="Username or email"><img src="assets/images/icons8-utilisateur-100.png" alt="" class="icon"></label>
+                <label for=""><input type="password" name="password" id="" placeholder="Password"><img src="assets/images/icons8-mot-de-passe-100.png" alt="" class="icon"></label>
+                <?php if(!empty($err)) echo $err;?>
+                <?php if(!empty($msg)) echo $msg;?>
                 <div class="bottom">
                     <button type="submit" class="button"><span>Sign In</span></button>
                     <a href="signup" class="button">Sign Up</a>
