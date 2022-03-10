@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web',Roboto,Poppins,cursive;
-    user-select: none;
 }
 .container{
     position: relative;
@@ -102,6 +101,16 @@ form .group input::placeholder{
 
 form .group input:focus{
     border-bottom: 2px solid tomato;
+}
+
+form .red{
+    color: red;
+    text-shadow: 0px 0px 2px black;
+}
+
+form .green{
+    color: green;
+    text-shadow: 0px 0px 1px rgb(25, 21, 21);
 }
 
 #submit{

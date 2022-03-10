@@ -21,14 +21,14 @@
         <form action="" method="post" autocomplete="off">
             <h1>Sign Up Form</h1>
             <div class="group">
-                <label for="name"><input type="text" name="name" placeholder="Your name (Eg: Mister Me)"></label>
+                <label for="name"><input type="text" name="name" placeholder="Your name (Eg: Mister Me)" required value="<?= !empty($name) ? $name:"" ?>"></label>
             </div>
             <div class="group">
                 <h5>At least 5 characters</h5>
-                <label for="username"><input type="text" name="username" id="username" placeholder="Your username (Eg: MisterMe)"></label>
+                <label for="username"><input type="text" name="username" id="username" placeholder="Your username (Eg: MisterMe)" minlength="5" required value="<?= !empty($username) ? $username:"" ?>"></label>
             </div>
             <div class="group">
-                <label for="email"><input type="email" name="email" placeholder="Your email (Eg: Me@me.me)"></label>
+                <label for="email"><input type="email" name="email" placeholder="Your email (Eg: Me@me.me)" required value="<?= !empty($email) ? $email:"" ?>"></label>
             </div>
             <div class="group">
                 <label for="gender">
@@ -40,21 +40,22 @@
             </label>
             </div>
             <div class="group">
-                <label for="name"><input type="date" name="birth"></label>
+                <label for="name"><input type="date" name="birth" required value="<?= !empty($birth) ? $birth:"" ?>"></label>
             </div>
             <div class="group">
             <h5>At least 6 characters</h5>
-                <label for="password1"><input type="password" id="password" name="password" placeholder="Your password"></label>
+                <label for="password1"><input type="password" id="password" name="password" placeholder="Your password" minlength="6" required></label>
             </div>
             <div class="group">
-                <label for="password2"><input type="password" name="cpassword" placeholder="Comfirm password"></label>
+                <label for="password2"><input type="password" name="cpassword" placeholder="Comfirm password" required></label>
             </div>
-            <button type="submit" id="submit">Sign Up</button>
+            <?php if(!empty($err)) echo $err;?>
+            <button type="submit" id="submit" required>Sign Up</button>
         </form>
     </div>
 </body>
 <script>
-    function check(variable,number){
+    function checkLength(variable,number){
         variable.addEventListener('keydown',function(){
             if (variable.value.length<number-1) {
                 variable.style.color="red";
@@ -67,7 +68,7 @@
 
     const username = document.getElementById('username');
     const password = document.getElementById('password');
-    check(username,5);
-    check(password,6);
+    checkLength(username,5);
+    checkLength(password,6);
 </script>
 </html>
