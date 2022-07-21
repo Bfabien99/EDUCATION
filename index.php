@@ -29,7 +29,7 @@
         }
         
     });
-    
+
 ////////////////* ROUTER POST PART *///////////////////
 
 //PAGE LOGIN
@@ -46,7 +46,7 @@
             else {
                 $msg = "<span class='red'>Password or username/email wrong</span>";
             }
-            
+
         }
         
         require 'views/login.php'; 
